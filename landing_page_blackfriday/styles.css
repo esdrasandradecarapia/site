@@ -1,0 +1,556 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #DC2626;
+    --secondary-color: #EF4444;
+    --accent-color: #FBBF24;
+    --accent-yellow: #FCD34D;
+    --dark-bg: #0a0a0a;
+    --dark-gray: #1a1a1a;
+    --medium-gray: #2d2d2d;
+    --light-gray: #404040;
+    --text-dark: #ffffff;
+    --text-light: #ffffff;
+    --text-gray: #d1d1d1;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 15px 40px rgba(220, 38, 38, 0.4);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+    background-color: var(--dark-bg);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* DOBRA 1 — HERO */
+.hero {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: var(--text-light);
+    padding: 80px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-image-placeholder {
+    margin: 40px 0;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 600;
+    margin: 40px 0 30px;
+    line-height: 1.4;
+    color: var(--accent-yellow);
+}
+
+.hero-features {
+    list-style: none;
+    max-width: 600px;
+    margin: 40px auto;
+    text-align: left;
+}
+
+.feature-item {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.feature-item:last-child {
+    border-bottom: none;
+}
+
+.check-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 20px 50px;
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 40px 0 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: none;
+}
+
+.cta-primary {
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+.microcopy {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* DOBRA 2 — EXPECTATIVA */
+.expectation {
+    padding: 100px 20px;
+    background: var(--dark-gray);
+    text-align: center;
+}
+
+.expectation-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.expectation-subheadline {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    color: var(--text-gray);
+    margin-bottom: 50px;
+    font-weight: 500;
+}
+
+.countdown-container {
+    margin: 60px 0;
+    padding: 40px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--primary-color);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+    min-width: 120px;
+}
+
+.countdown-number {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 900;
+    color: var(--accent-yellow);
+    line-height: 1;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(220, 38, 38, 0.5);
+}
+
+.countdown-label {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--text-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.countdown-separator {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.expectation-text {
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    margin: 50px 0 20px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.expectation-text strong {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+.expectation-highlight {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 30px 0 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.clock-image-placeholder {
+    margin: 50px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.clock-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.cta-secondary {
+    background: linear-gradient(135deg, #FBBF24 0%, #FCD34D 100%);
+    color: var(--dark-bg);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
+}
+
+.cta-secondary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(251, 191, 36, 0.4);
+    background: linear-gradient(135deg, #FCD34D 0%, #FBBF24 100%);
+}
+
+/* DOBRA 3 — FECHAMENTO */
+.closing {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, var(--dark-gray) 0%, var(--dark-bg) 100%);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.closing-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.closing-title {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 50px;
+    line-height: 1.3;
+    color: var(--text-light);
+}
+
+.closing-text {
+    margin: 60px 0;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.closing-paragraph {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 2;
+    margin-bottom: 30px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.closing-emphasis {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* CARROSSEL ANTES E DEPOIS */
+.carousel-container {
+    margin: 60px 0;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--primary-color);
+    aspect-ratio: 16 / 9;
+    max-height: 800px;
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    position: relative;
+    height: 100%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(220, 38, 38, 0.9);
+    border: 2px solid var(--accent-yellow);
+    color: var(--text-light);
+    font-size: 3rem;
+    font-weight: 900;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+    line-height: 1;
+    padding: 0;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--accent-yellow);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 20px rgba(220, 38, 38, 0.6);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn-prev {
+    left: 20px;
+}
+
+.carousel-btn-next {
+    right: 20px;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--medium-gray);
+    border: 2px solid var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.carousel-indicator:hover {
+    background: var(--primary-color);
+    transform: scale(1.2);
+}
+
+.carousel-indicator.active {
+    background: var(--accent-yellow);
+    border-color: var(--accent-yellow);
+    transform: scale(1.3);
+    box-shadow: 0 0 10px rgba(251, 191, 36, 0.6);
+}
+
+.cta-final {
+    background: linear-gradient(135deg, #DC2626 0%, #EF4444 100%);
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    padding: 25px 60px;
+    margin: 50px 0 30px;
+}
+
+.cta-final:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: var(--shadow-hover);
+    background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+}
+
+.microcopy-final {
+    font-size: 1rem;
+    color: var(--text-light);
+    opacity: 0.9;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 20px;
+    }
+    
+    .expectation,
+    .closing {
+        padding: 60px 20px;
+    }
+    
+    .countdown {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 80px;
+    }
+    
+    .countdown-separator {
+        display: none;
+    }
+    
+    .carousel-container {
+        margin: 40px 0;
+        max-width: 100%;
+    }
+    
+    .carousel-wrapper {
+        aspect-ratio: 16 / 9;
+        max-height: 600px;
+    }
+    
+    .carousel-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 2.5rem;
+    }
+    
+    .carousel-btn-prev {
+        left: 10px;
+    }
+    
+    .carousel-btn-next {
+        right: 10px;
+    }
+    
+    .carousel-indicators {
+        gap: 8px;
+        margin-top: 20px;
+    }
+    
+    .carousel-indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .closing-text {
+        text-align: center;
+    }
+    
+    .cta-button {
+        padding: 18px 40px;
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content,
+.expectation-content,
+.closing-content {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Efeito de pulso no countdown */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.countdown-number {
+    animation: pulse 2s infinite;
+}
